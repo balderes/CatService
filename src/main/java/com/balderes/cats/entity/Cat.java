@@ -1,23 +1,23 @@
-package com.balderes.cats;
+package com.balderes.cats.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
 @Setter
-@NoArgsConstructor
+@Builder
+@AllArgsConstructor
 @ToString
 @Table(name = "cats")
 @Entity
 public class Cat {
-
     public Cat(String name, Integer age, Double weight) {
         this.name = name;
         this.age = age;
         this.weight = weight;
+    }
+
+    public Cat() {
     }
 
     @Id
