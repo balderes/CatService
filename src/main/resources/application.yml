@@ -13,15 +13,18 @@ spring:
   #  docker pull postgres
   #  docker run -itd -e POSTGRES_DB=cats_dev -e POSTGRES_USER=cats -e POSTGRES_PASSWORD=12345 -p 5434:5432 --name cats_dev postgres
   datasource:
-    url: jdbc:postgresql://127.0.0.1:5434/cats_dev
-    username: cats
-    password: 12345
+    url: ${DB_URL}
+    #url: jdbc:postgresql://127.0.0.1:5434/cats_dev
+    username: ${DB_USER}
+    #username: cats
+    password: ${DB_PASSWORD}
+    #password: 12345
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: update
     properties:
-      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
       hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
 

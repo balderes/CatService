@@ -41,7 +41,7 @@ public class CatController {
 
     @GetMapping("/{id}")
     public Cat getCat(@PathVariable Integer id) {
-        return catRepository.findById(id).orElseThrow();
+        return catRepository.findById(id).orElse(new Cat());
     }
 
     @DeleteMapping("/{id}")
